@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>自己紹介</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a3a6b 0%, #4fc3f7 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans JP', sans-serif;
+      padding: 40px 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ↓ バーが0%から伸びるアニメーション */
+    @keyframes barGrow {
+      from { width: 0%; }
+      to   { width: var(--bar-width); }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+      padding: 40px 48px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin: 28px 0 16px;
+      text-align: left;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      text-align: left;
+      display: inline-block;
+      width: 100%;
+    }
+
+    li {
+      color: #1a3a6b;
+      background-color: #e8f4fd;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 8px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #4fc3f7;
+      color: #fff;
+    }
+
+    a {
+      color: #1a7abf;
+    }
+
+    /* ↓ スキルセクション */
+    .skills {
+      text-align: left;
+      width: 100%;
+    }
+
+    .skill-item {
+      margin-bottom: 16px;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .skill-track {
+      background-color: #e8f4fd;
+      border-radius: 99px;
+      height: 14px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .skill-bar {
+      height: 100%;
+      border-radius: 99px;
+      /* ↓ グラデーション */
+      background: linear-gradient(90deg, #1a3a6b, #4fc3f7);
+      /* ↓ バーが伸びるアニメーション（0.8秒・ease-out） */
+      animation: barGrow 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>久柴心桜</h1>
+    <p>こんにちは！プログラミングを学習中です。</p>
+
+    <ul>
+      <li>📚 趣味: 読書</li>
+      <li>🎵 趣味: 音楽</li>
+      <li>✈️ 趣味: 旅行</li>
+      <li>💻 趣味: パソコン操作</li>
+      <li>⭐ 趣味: 推し活</li>
+    </ul>
+
+    <!-- ↓ スキルセクション -->
+    <div class="skills">
+      <h2>スキル</h2>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>HTML/CSS</span>
+          <span>40%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-bar" style="--bar-width: 40%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>JavaScript</span>
+          <span>20%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-bar" style="--bar-width: 20%;"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-label">
+          <span>AI活用</span>
+          <span>80%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-bar" style="--bar-width: 80%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <a href="https://www.google.com">Googleを開く</a>
+  </div>
+</body>
+</html>
